@@ -1,4 +1,4 @@
-# my-app
+# new-si-app
 
 ## Project setup
 ```
