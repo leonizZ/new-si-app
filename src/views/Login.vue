@@ -1,8 +1,8 @@
 <template>
-  <div class="login-cont">
+  <div class="login-cont mt-4">
     <v-row>
       <div class="v-col mx-auto">
-        <img size="35" src="../assets/si-logo-brd.png" alt="" />
+        <img width="150px" src="../assets/si-logo-brd.png" alt="" />
       </div>
     </v-row>
     <v-row>
@@ -31,7 +31,7 @@
             LOGIN
           </v-btn>
           <br />
-          <v-btn block color="warning" large>
+          <v-btn block color="warning" large @click="goTo('/register')">
             REGISTER
           </v-btn>
         </v-form>
@@ -66,6 +66,12 @@ export default {
     },
     resetValidation() {
       this.$refs.form.resetValidation()
+    },
+
+    goTo(path) {
+      this.$router.push({ path: path }).catch(() => {
+        this.drawer = false
+      })
     }
   }
 }

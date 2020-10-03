@@ -78,9 +78,9 @@
           </v-tab>
         </v-tabs>
 
-        <v-tabs-items v-model="tab" class="mt-2 game-trend-cont">
+        <v-tabs-items v-model="tab" class="mt-2 game-trend-cont" touchless>
           <v-tab-item>
-            <div class="d-flex trend-container">
+            <div class="d-flex " id="trend-container">
               <div class="d-flex flex-column trend-col">
                 <v-icon color="red ">mdi-checkbox-blank-circle</v-icon>
                 <v-icon color="red ">mdi-checkbox-blank-circle</v-icon>
@@ -118,6 +118,18 @@
               <div class="d-flex flex-column trend-col">
                 <v-icon color="blue ">mdi-checkbox-blank-circle</v-icon>
                 <v-icon color="blue ">mdi-checkbox-blank-circle</v-icon>
+              </div>
+              <div class="d-flex flex-column trend-col">
+                <v-icon color="red ">mdi-checkbox-blank-circle</v-icon>
+                <v-icon color="red ">mdi-checkbox-blank-circle</v-icon>
+                <v-icon color="red ">mdi-checkbox-blank-circle</v-icon>
+                <v-icon color="red ">mdi-checkbox-blank-circle</v-icon>
+              </div>
+              <div class="d-flex flex-column trend-col">
+                <v-icon color="red ">mdi-checkbox-blank-circle</v-icon>
+                <v-icon color="red ">mdi-checkbox-blank-circle</v-icon>
+                <v-icon color="red ">mdi-checkbox-blank-circle</v-icon>
+                <v-icon color="red ">mdi-checkbox-blank-circle</v-icon>
               </div>
             </div>
           </v-tab-item>
@@ -134,8 +146,16 @@
                       </p>
                     </div>
                     <div class="flex-column right text-right">
-                      <span class="caption">Bet Amount</span>
-                      <p class="body-2 mb-0 bet-amount win">3,445.00</p>
+                      <div class="d-flex">
+                        <span class="mr-3">
+                          <span class="caption grey--text">Bet Amount</span>
+                          <p class="body-2 mb-0 bet-amount ">3,445.00</p>
+                        </span>
+                        <span>
+                          <span class="caption grey--text">Win Amount</span>
+                          <p class="body-2 mb-0 bet-amount win">3,445.00</p>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </v-card>
@@ -150,7 +170,7 @@
                       </p>
                     </div>
                     <div class="flex-column right text-right">
-                      <span class="caption">Bet Amount</span>
+                      <span class="caption grey--text">Bet Amount</span>
                       <p class="body-2 mb-0 bet-amount lose">3,445.00</p>
                     </div>
                   </div>
@@ -164,7 +184,7 @@
                       <p class="body-2 mb-0"><span class="draw">DRAW</span></p>
                     </div>
                     <div class="flex-column text-right ">
-                      <span class="caption">Bet Amount</span>
+                      <span class="caption grey--text">Bet Amount</span>
                       <p class="body-2 mb-0 bet-amount draw">3,445.00</p>
                     </div>
                   </div>
@@ -202,9 +222,16 @@
                     active-class="red white--text"
                     column
                   >
-                    <v-chip v-for="bet in betOption" :key="bet" :value="bet">
-                      {{ bet }}
-                    </v-chip>
+                    <div class=" justify-center">
+                      <v-chip
+                        class="bet-btn"
+                        v-for="bet in betOption"
+                        :key="bet"
+                        :value="bet"
+                      >
+                        {{ bet }}
+                      </v-chip>
+                    </div>
                   </v-chip-group>
                 </div>
               </v-card-text>
@@ -233,9 +260,16 @@
                     active-class="blue white--text"
                     column
                   >
-                    <v-chip v-for="bet in betOption" :key="bet" :value="bet">
-                      {{ bet }}
-                    </v-chip>
+                    <div class=" justify-center">
+                      <v-chip
+                        class="bet-btn"
+                        v-for="bet in betOption"
+                        :key="bet"
+                        :value="bet"
+                      >
+                        {{ bet }}
+                      </v-chip>
+                    </div>
                   </v-chip-group>
                 </div>
               </v-card-text>
@@ -275,9 +309,36 @@ export default {
 </script>
 
 <style scoped>
+.bet-btn {
+  width: 21.5%;
+}
 .trend-cont {
   margin: 20px 0;
   background: #2c3439;
   border-radius: 5px;
+}
+#trend-container {
+  overflow-y: scroll;
+}
+
+/* width */
+#trend-container ::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+#trend-container ::-webkit-scrollbar-track {
+  background-color: #f3f6ff;
+}
+
+/* Handle */
+#trend-container ::-webkit-scrollbar-thumb {
+  background: #1085e4;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+#trend-container ::-webkit-scrollbar-thumb:hover {
+  background: #1275c6;
 }
 </style>

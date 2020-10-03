@@ -71,6 +71,9 @@ export default {
   background-color: #2c343a !important;
   margin-bottom: 8px;
 }
+.bet-amount {
+  color: #fff;
+}
 .bet-amount.win,
 span.wins,
 .trans-amount.add-credits {

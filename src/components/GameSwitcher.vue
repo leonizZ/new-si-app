@@ -1,5 +1,7 @@
 <template>
-  <v-container>
+  <v-container
+    v-if="currentRouteName !== 'login' && currentRouteName !== 'register'"
+  >
     <v-row class="child-flex">
       <v-col cols="12">
         <v-speed-dial
@@ -49,7 +51,12 @@
 export default {
   data: () => ({
     fab: false
-  })
+  }),
+  computed: {
+    currentRouteName() {
+      return this.$route.name
+    }
+  }
 }
 </script>
 

@@ -13,6 +13,7 @@
             :rules="phoneRules"
             required
             single-line
+            dense
             solo
           ></v-text-field>
 
@@ -24,12 +25,13 @@
             name="input-10-1"
             single-line
             solo
+            dense
             @click:append="show1 = !show1"
           ></v-text-field>
           <v-btn block color="warning" large>
             REGISTER
           </v-btn>
-          <br />    
+          <br />
           <v-btn block color="error" class="mr-4" large>
             LOGIN
           </v-btn>
