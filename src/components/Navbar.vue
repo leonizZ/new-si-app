@@ -1,14 +1,19 @@
 <template>
   <div class="">
     <v-app-bar
-      color="blue-grey darken-4"
+      color="#0c0f13"
       dark
+      flat
+      dense
       v-if="currentRouteName !== 'login' && currentRouteName !== 'register'"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <p class=" mb-0">{{ currentRouteName }}</p>
+      <p class=" mb-0 text-capitalize">{{ currentRouteName }}</p>
       <v-spacer></v-spacer>
-      <p class="mb-0 font-weight-medium">123,000.00</p>
+      <p class="mb-0 font-weight-medium amber--text text-accent-4">
+        123,000.00
+        <span> <v-icon color="amber accent-4">mdi-tag-multiple</v-icon></span>
+      </p>
       <v-btn icon>
         <v-icon>mdi-cached</v-icon>
       </v-btn>

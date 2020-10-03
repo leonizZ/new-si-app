@@ -1,31 +1,6 @@
 <template>
   <div class="">
-    <v-row>
-      <v-col>
-        <v-card class="mx-auto white--text" color="#2C343A" flat>
-          <v-list-item three-line>
-            <v-list-item-content>
-              <div class="overline white--text">
-                Account Credits
-              </div>
-              <v-list-item-title class="headline mb-1 orange--text">
-                P 123,123.00
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-card-actions>
-            <v-btn depressed small color="success">
-              Add Credits
-            </v-btn>
-
-            <v-btn depressed small color="warning">
-              Withdraw
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
+    <credit-balance></credit-balance>
     <v-row>
       <v-col>
         <v-tabs
@@ -63,7 +38,7 @@
                     </div>
                   </v-card>
                 </v-col>
-                <v-col cols="12" sm="6" md="4" class="pb-0">
+                <v-col cols="12" sm="6" md="4" class="py-0">
                   <v-card
                     flat
                     class="transaction-history-cont px-3 py-2 white--text"
@@ -79,7 +54,7 @@
                     </div>
                   </v-card>
                 </v-col>
-                <v-col cols="12" sm="6" md="4" class="pb-0">
+                <v-col cols="12" sm="6" md="4" class="py-0">
                   <v-card
                     flat
                     class="transaction-history-cont px-3 py-2 white--text"
@@ -95,7 +70,7 @@
                     </div>
                   </v-card>
                 </v-col>
-                <v-col cols="12" sm="6" md="4" class="pb-0">
+                <v-col cols="12" sm="6" md="4" class="py-0">
                   <v-card
                     flat
                     class="transaction-history-cont px-3 py-2 white--text"
@@ -188,7 +163,11 @@
 </template>
 
 <script>
+import CreditBalance from '@/components/CreditBalance'
 export default {
+  components: {
+    CreditBalance
+  },
   data: () => ({
     tab: 0,
     show1: false,

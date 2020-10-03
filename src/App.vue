@@ -5,7 +5,7 @@
 
     <v-main class="main-cont">
       <!-- Provides the application the proper gutter -->
-      <v-container fluid>
+      <v-container fluid class="pt-0">
         <!-- If using vue-router -->
 
         <v-fade-transition mode="out-in">
@@ -89,5 +89,22 @@ export default {
   100% {
     transform: scale(1);
   }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink 1s infinite;
 }
 </style>

@@ -1,17 +1,24 @@
 <template>
   <div class="">
+    <video-play></video-play>
     <!-- Video Content -->
     <v-row>
       <v-col class="vid-content">
-        <div class="d-flex justify-space-between align-center">
-          <div class="">
-            <p>Fight #123</p>
-          </div>
-          <div class="">
-            <p class="caption mb-0">
-              <v-icon color="red" size="12">mdi-checkbox-blank-circle</v-icon>
-              Not Open
-            </p>
+        <div class="float-right">
+          <p class="caption mb-0">
+            <v-avatar color="error" size="8" class="blink"></v-avatar>
+            Not Open
+          </p>
+        </div>
+        <div class="">
+          <p class="mb-0">Fight #123</p>
+          <div class="d-flex align-center">
+            <span>
+              <v-btn x-small class="error">MIRROR</v-btn>
+            </span>
+            <span class="ml-1">
+              <p class="caption mb-0">PRIVATE SABONG(350 Exp. Fights)</p>
+            </span>
           </div>
         </div>
       </v-col>
@@ -25,7 +32,12 @@
 
         <div class="text-center pt-2 white--text">
           <h4>123,077.00</h4>
-          <v-btn depressed small class="mt-2">
+          <v-btn
+            depressed
+            small
+            class="mt-2 red--text"
+            @click="m_dialog = true"
+          >
             CHOOSE MERON
           </v-btn>
         </div>
@@ -36,13 +48,19 @@
         </div>
         <div class="text-center pt-2 white--text">
           <h4 color="text-white">123,077.00</h4>
-          <v-btn depressed small class="mt-2">
+          <v-btn
+            depressed
+            small
+            class="mt-2 blue--text"
+            @click="w_dialog = true"
+          >
             CHOOSE WALA
           </v-btn>
         </div>
       </v-col>
     </v-row>
     <!-- Game trends -->
+
     <v-row>
       <v-col>
         <v-tabs
@@ -106,7 +124,7 @@
 
           <v-tab-item>
             <v-row>
-              <v-col cols="12" sm="6" md="4" class="pb-0">
+              <v-col cols="12" sm="6" md="4" class="py-0">
                 <v-card flat class="bet-history-cont px-3 py-2 white--text">
                   <div class="d-flex justify-space-between align-center">
                     <div class="">
@@ -120,7 +138,7 @@
                   </div>
                 </v-card>
               </v-col>
-              <v-col cols="12" sm="6" md="4" class="pb-0">
+              <v-col cols="12" sm="6" md="4" class="py-0">
                 <v-card flat class=" bet-history-cont px-3 py-2 white--text">
                   <div class="d-flex justify-space-between align-center">
                     <div class="">
@@ -139,17 +157,100 @@
         </v-tabs-items>
       </v-col>
     </v-row>
+    <!-- Dialogs -->
+    <v-row>
+      <v-col>
+        <div class="text-center">
+          <v-dialog v-model="m_dialog">
+            <v-card>
+              <v-card-title class="body-1 red darken-1 white--text">
+                Choose Meron
+              </v-card-title>
+
+              <v-card-text class="px-3">
+                <div class="py-4">
+                  <v-text-field
+                    v-model="getSelection"
+                    class="bet-input"
+                    placeholder="0.00"
+                    solo-inverted
+                    dense
+                    flat
+                    append-icon="mdi-tag-multiple"
+                  >
+                  </v-text-field>
+                  <v-chip-group
+                    v-model="selection"
+                    active-class="red white--text"
+                    column
+                  >
+                    <v-chip v-for="bet in betOption" :key="bet" :value="bet">
+                      {{ bet }}
+                    </v-chip>
+                  </v-chip-group>
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-dialog>
+          <v-dialog v-model="w_dialog">
+            <v-card>
+              <v-card-title class="body-1 blue darken-2 white--text">
+                CHOOSE WALA
+              </v-card-title>
+
+              <v-card-text class="px-3">
+                <div class="py-4">
+                  <v-text-field
+                    v-model="getSelection"
+                    class="bet-input"
+                    placeholder="0.00"
+                    solo-inverted
+                    dense
+                    flat
+                    append-icon="mdi-tag-multiple"
+                  >
+                  </v-text-field>
+                  <v-chip-group
+                    v-model="selection"
+                    active-class="blue white--text"
+                    column
+                  >
+                    <v-chip v-for="bet in betOption" :key="bet" :value="bet">
+                      {{ bet }}
+                    </v-chip>
+                  </v-chip-group>
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-dialog>
+        </div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
+import VideoPlay from '@/components/VideoPlay'
 export default {
+  components: {
+    VideoPlay
+  },
   data: () => ({
-    tab: 0
+    tab: 0,
+    text: 'center',
+    m_dialog: false,
+    w_dialog: false,
+    selection: null,
+    betOption: ['All In', '5000', '3000', '1500', '1000', '500', '200', '100']
   }),
   methods: {
     setTab(tab) {
       this.tab = tab
+    }
+  },
+  computed: {
+    getSelection() {
+      return this.selection
     }
   }
 }
