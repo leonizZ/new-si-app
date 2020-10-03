@@ -21,17 +21,22 @@
           </template>
           <v-btn fab small>
             <v-avatar class="game-btn-avatar">
-              <img src="@/assets/si-btn.png" alt="John" />
+              <img src="@/assets/si-btn.png" alt="Sabong International" />
             </v-avatar>
           </v-btn>
           <v-btn fab small>
             <v-avatar class="game-btn-avatar">
-              <img src="@/assets/coin-btn.png" alt="John" />
+              <img src="@/assets/coin-btn.png" alt="Coin Master" />
             </v-avatar>
           </v-btn>
           <v-btn fab small>
             <v-avatar class="game-btn-avatar">
-              <img src="@/assets/cfg-btn.png" alt="John" />
+              <img src="@/assets/cfg-btn.png" alt="Color Fun Game" />
+            </v-avatar>
+          </v-btn>
+          <v-btn fab small>
+            <v-avatar class="game-btn-avatar">
+              <v-icon>mdi-message</v-icon>
             </v-avatar>
           </v-btn>
         </v-speed-dial>

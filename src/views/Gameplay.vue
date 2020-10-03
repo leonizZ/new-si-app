@@ -128,12 +128,14 @@
                 <v-card flat class="bet-history-cont px-3 py-2 white--text">
                   <div class="d-flex justify-space-between align-center">
                     <div class="">
-                      <span class="caption">#123</span>
-                      <p class="mb-0">WALA <span>WINS</span></p>
+                      <span class="caption grey--text">#123</span>
+                      <p class="body-2 mb-0">
+                        WALA <span class="wins">WINS</span>
+                      </p>
                     </div>
-                    <div class="flex-column right  ">
+                    <div class="flex-column right text-right">
                       <span class="caption">Bet Amount</span>
-                      <p class="mb-0 bet-amount">3,445.00</p>
+                      <p class="body-2 mb-0 bet-amount win">3,445.00</p>
                     </div>
                   </div>
                 </v-card>
@@ -142,12 +144,28 @@
                 <v-card flat class=" bet-history-cont px-3 py-2 white--text">
                   <div class="d-flex justify-space-between align-center">
                     <div class="">
-                      <span class="caption">#123</span>
-                      <p class="mb-0">WALA <span>WINS</span></p>
+                      <span class="caption grey--text">#123</span>
+                      <p class="body-2 mb-0">
+                        WALA <span class="lose">WINS</span>
+                      </p>
                     </div>
-                    <div class="flex-column right  ">
+                    <div class="flex-column right text-right">
                       <span class="caption">Bet Amount</span>
-                      <p class="mb-0 bet-amount">3,445.00</p>
+                      <p class="body-2 mb-0 bet-amount lose">3,445.00</p>
+                    </div>
+                  </div>
+                </v-card>
+              </v-col>
+              <v-col cols="12" sm="6" md="4" class="py-0">
+                <v-card flat class=" bet-history-cont px-3 py-2 white--text">
+                  <div class="d-flex justify-space-between align-center">
+                    <div class="">
+                      <span class="caption grey--text">#123</span>
+                      <p class="body-2 mb-0"><span class="draw">DRAW</span></p>
+                    </div>
+                    <div class="flex-column text-right ">
+                      <span class="caption">Bet Amount</span>
+                      <p class="body-2 mb-0 bet-amount draw">3,445.00</p>
                     </div>
                   </div>
                 </v-card>
@@ -256,4 +274,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.trend-cont {
+  margin: 20px 0;
+  background: #2c3439;
+  border-radius: 5px;
+}
+</style>

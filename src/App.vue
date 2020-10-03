@@ -60,7 +60,7 @@ export default {
   background: #1e2329 !important;
 }
 .trend-col {
-  background: #36484f;
+  background: #2c343a;
   margin-right: 5px;
   padding: 5px;
   border-radius: 5px;
@@ -68,10 +68,23 @@ export default {
 
 .bet-history-cont,
 .transaction-history-cont {
-  background-color: #37474f !important;
+  background-color: #2c343a !important;
   margin-bottom: 8px;
 }
-
+.bet-amount.win,
+span.wins,
+.trans-amount.add-credits {
+  color: #4ac74a;
+}
+.bet-amount.lose,
+span.lose {
+  color: #ff5c2a;
+}
+.bet-amount.draw,
+span.draw,
+.trans-amount.withdraw {
+  color: #ffd602;
+}
 /* Animate */
 .bounce-enter-active {
   animation: bounce-in 0.5s;

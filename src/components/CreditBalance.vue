@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col>
-      <v-card class="mx-auto white--text" color="#2C343A" flat>
+      <v-card class="mx-auto white--text" color="#2C343A " flat>
         <v-card-text>
           <p class="float-right caption grey--text text-lighten-1">
             Account Credits

@@ -20,7 +20,7 @@
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" absolute temporary>
-      <v-card class="pa-4" color="#37474f" dark tile flat>
+      <v-card class="pa-4" color="#2C343A " dark tile flat>
         <p class="mb-0 ">John Doe</p>
         <p class="caption">091548888669</p>
       </v-card>
@@ -46,6 +46,7 @@
               <v-list-item-title>Help</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+          <v-divider></v-divider>
           <v-subheader>WALLET</v-subheader>
           <v-list-item link @click="goTo('/add-credits')">
             <v-list-item-icon>
@@ -71,10 +72,11 @@
               <v-list-item-title>Transactions</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+          <v-divider></v-divider>
           <v-subheader>ACCOUNT</v-subheader>
           <v-list-item>
             <v-list-item-icon>
-              <v-icon>mdi-settings</v-icon>
+              <v-icon>mdi-shield</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>Settings</v-list-item-title>
