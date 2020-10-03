@@ -1,4 +1,4 @@
-# new-si-app
+# new-si-app VUETIFY HTML MATERIAL
 
 ## Project setup
 ```
