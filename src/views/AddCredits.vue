@@ -2,65 +2,64 @@
   <div class="">
     <credit-balance></credit-balance>
     <v-row>
-      <v-col>
-        <v-row>
-          <v-col cols="3" class="pr-0">
-            <v-card
-              class="pa-2 credits-tab"
-              @click="setTab(0)"
-              flat
-              :class="{ active: tab === 0 }"
-            >
-              <div class="text-center">
-                <v-avatar>
-                  <img src="@/assets/gcash.png" alt="Gcash" />
-                </v-avatar>
-              </div>
-            </v-card>
-          </v-col>
-          <v-col cols="3" class="pr-0">
-            <v-card
-              class="pa-2 credits-tab"
-              @click="setTab(1)"
-              flat
-              :class="{ active: tab === 1 }"
-            >
-              <div class="text-center">
-                <v-avatar>
-                  <img src="@/assets/cc.png" alt="Credit Card" />
-                </v-avatar>
-              </div>
-            </v-card>
-          </v-col>
-          <v-col cols="3" class="pr-0">
-            <v-card
-              class="pa-2 credits-tab"
-              flat
-              @click="setTab(2)"
-              :class="{ active: tab === 2 }"
-            >
-              <div class="text-center">
-                <v-avatar>
-                  <img src="@/assets/ml.png" alt="Credit Card" />
-                </v-avatar>
-              </div>
-            </v-card>
-          </v-col>
-          <v-col cols="3" class="pr-0">
-            <v-card
-              class="pa-2 credits-tab"
-              flat
-              @click="setTab(3)"
-              :class="{ active: tab === 3 }"
-            >
-              <div class="text-center">
-                <v-avatar>
-                  <img src="@/assets/cebuana.png" alt="Credit Card" />
-                </v-avatar>
-              </div>
-            </v-card>
-          </v-col>
-        </v-row>
+      <v-col cols="12">
+        <div
+          class="d-flex justify-space-between align-center "
+          style="margin:0 -5px;"
+        >
+          <v-card
+            class="pa-2 credits-tab"
+            @click="setTab(0)"
+            flat
+            :class="{ active: tab === 0 }"
+          >
+            <div class="text-center">
+              <v-avatar>
+                <img src="@/assets/gcash.png" alt="Gcash" />
+              </v-avatar>
+            </div>
+          </v-card>
+
+          <v-card
+            class="pa-2 credits-tab"
+            @click="setTab(1)"
+            flat
+            :class="{ active: tab === 1 }"
+          >
+            <div class="text-center">
+              <v-avatar>
+                <img src="@/assets/cc.png" alt="Credit Card" />
+              </v-avatar>
+            </div>
+          </v-card>
+
+          <v-card
+            class="pa-2 credits-tab"
+            flat
+            @click="setTab(2)"
+            :class="{ active: tab === 2 }"
+          >
+            <div class="text-center">
+              <v-avatar>
+                <img src="@/assets/ml.png" alt="Credit Card" />
+              </v-avatar>
+            </div>
+          </v-card>
+
+          <v-card
+            class="pa-2 credits-tab"
+            flat
+            @click="setTab(3)"
+            :class="{ active: tab === 3 }"
+          >
+            <div class="text-center">
+              <v-avatar>
+                <img src="@/assets/cebuana.png" alt="Credit Card" />
+              </v-avatar>
+            </div>
+          </v-card>
+        </div>
+
         <v-tabs-items v-model="tab" class="mt-0 game-trend-cont">
           <!-- GCash -->
           <v-tab-item>
@@ -205,6 +204,7 @@
                         label="File input"
                         solo
                         dense
+                        class="white--text"
                       ></v-file-input>
 
                       <v-btn block color="error" class="mr-4" large>
@@ -400,6 +400,8 @@ export default {
 <style scoped>
 .credits-tab {
   background-color: #2c343a;
+  width: 25%;
+  margin: 0 5px 15px;
 }
 .credits-tab.active {
   background-color: #fff;

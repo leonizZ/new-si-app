@@ -5,7 +5,7 @@
 
     <v-main class="main-cont">
       <!-- Provides the application the proper gutter -->
-      <v-container fluid class="pt-0">
+      <v-container fluid>
         <!-- If using vue-router -->
 
         <v-fade-transition mode="out-in">
@@ -31,6 +31,27 @@ export default {
 <style>
 .main-cont {
   background-color: #1d2329;
+}
+/* LOGIN AND REGISTRATION */
+
+.login-cont,
+.register-cont {
+  background-color: #1d2329;
+  position: relative;
+  min-height: 100vh;
+}
+
+.si-background {
+  position: absolute;
+  bottom: 0;
+  margin: 0 -30px;
+}
+.si-background img {
+  background-size: contain;
+  width: 100%;
+  opacity: 0.5;
+  z-index: 0;
+  margin-bottom: -18px;
 }
 
 /* Video Content */
@@ -122,5 +143,12 @@ span.draw,
 
 .blink {
   animation: blink 1s infinite;
+}
+
+@media only screen and (min-width: 425px) {
+  /* background-hidden on large devices */
+  .si-background {
+    display: none;
+  }
 }
 </style>

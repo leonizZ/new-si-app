@@ -8,6 +8,7 @@ import Account from '@/components/Account.vue'
 import Withdraw from '@/views/Withdraw.vue'
 import AddCredits from '@/views/AddCredits.vue'
 import Gameplay from '@/views/Gameplay.vue'
+import GameHelp from '@/views/GameHelp.vue'
 import Login from '@/views/Login.vue'
 import Register from '@/views/Register.vue'
 
@@ -39,7 +40,7 @@ const routes = [
   },
   {
     path: '/add-credits',
-    name: 'add-credits',
+    name: 'add credits',
     component: AddCredits
   },
 
@@ -47,6 +48,11 @@ const routes = [
     path: '/account',
     name: 'account',
     component: Account
+  },
+  {
+    path: '/help',
+    name: 'Game Help',
+    component: GameHelp
   }
 ]
 

@@ -38,7 +38,7 @@
           </v-btn>
           <v-btn fab small>
             <v-avatar class="game-btn-avatar">
-              <v-icon>mdi-message</v-icon>
+              <v-icon color="orange">mdi-message</v-icon>
             </v-avatar>
           </v-btn>
         </v-speed-dial>
@@ -66,5 +66,6 @@ export default {
 }
 .game-btn-avatar {
   border: 2px solid #fdd835;
+  background: #fff;
 }
 </style>

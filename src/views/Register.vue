@@ -1,43 +1,78 @@
 <template>
-  <v-container class="login-cont">
-    <v-row>
-      <div class="v-col mx-auto">
-        <img src="../assets/si-logo-brd.png" alt="" />
-      </div>
-    </v-row>
-    <v-row>
-      <v-col class="mx-auto">
-        <v-form ref="form" v-model="valid" lazy-validation>
-          <v-text-field
-            v-model="phone"
-            :rules="phoneRules"
-            required
-            single-line
-            dense
-            solo
-          ></v-text-field>
-
-          <v-text-field
-            v-model="password"
-            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.required, rules.min]"
-            :type="show1 ? 'text' : 'password'"
-            name="input-10-1"
-            single-line
-            solo
-            dense
-            @click:append="show1 = !show1"
-          ></v-text-field>
-          <v-btn block color="warning" large>
-            REGISTER
-          </v-btn>
-          <br />
-          <v-btn block color="error" class="mr-4" large>
-            LOGIN
-          </v-btn>
-        </v-form>
-      </v-col>
-    </v-row>
+  <v-container class="register-cont mt-4 px-4">
+    <div class="si-background ">
+      <img src="@/assets/si-bg.png" alt="" />
+    </div>
+    <div class="test">
+      <v-row>
+        <div class="v-col mx-auto">
+          <img width="150px" src="../assets/si-logo-brd.png" alt="" />
+        </div>
+      </v-row>
+      <v-row>
+        <v-col class="mx-auto">
+          <v-form ref="form" v-model="valid" lazy-validation>
+            <p class="body-2 mb-1 white--text">Phone</p>
+            <v-text-field
+              v-model="phone"
+              :rules="phoneRules"
+              class="mb-2"
+              required
+              placeholder="0900000000"
+              dense
+              solo
+              hide-details="auto"
+            >
+            </v-text-field>
+            <p class="body-2 mb-1 white--text">UserName</p>
+            <v-text-field
+              v-model="username"
+              placeholder="Username"
+              class="mb-2"
+              single-line
+              solo
+              hide-details="auto"
+              dense
+            ></v-text-field>
+            <p class="body-2 mb-1 white--text">Password</p>
+            <v-text-field
+              v-model="password"
+              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+              :rules="[rules.required, rules.min]"
+              :type="show1 ? 'text' : 'password'"
+              name="input-10-1"
+              class="mb-2"
+              single-line
+              solo
+              dense
+              @click:append="show1 = !show1"
+              hide-details="auto"
+            ></v-text-field>
+            <p class="body-2 mb-1 white--text">Confirm Password</p>
+            <v-text-field
+              v-model="password"
+              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+              :rules="[rules.required, rules.min]"
+              :type="show1 ? 'text' : 'password'"
+              name="input-10-1"
+              single-line
+              solo
+              dense
+              @click:append="show1 = !show1"
+            ></v-text-field>
+            <v-btn block color="warning">
+              REGISTER
+            </v-btn>
+            <br />
+            <div class="text-center">
+              <v-btn text dark @click="goTo('/login')">
+                LOGIN
+              </v-btn>
+            </div>
+          </v-form>
+        </v-col>
+      </v-row>
+    </div>
   </v-container>
 </template>
 
@@ -47,10 +82,11 @@ export default {
     show1: false,
     valid: true,
     phone: '',
+    username: '',
     password: 'Password',
     phoneRules: [
       v => !!v || 'Name is required',
-      v => (v && v.length <= 10) || 'Phone must be valid'
+      v => (v && v.length <= 11) || 'Phone must be valid'
     ],
     rules: {
       required: value => !!value || 'Required.',
@@ -67,6 +103,11 @@ export default {
     },
     resetValidation() {
       this.$refs.form.resetValidation()
+    },
+    goTo(path) {
+      this.$router.push({ path: path }).catch(() => {
+        this.drawer = false
+      })
     }
   }
 }

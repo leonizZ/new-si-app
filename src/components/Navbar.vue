@@ -8,7 +8,9 @@
       v-if="currentRouteName !== 'login' && currentRouteName !== 'register'"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <p class=" mb-0 text-capitalize">{{ currentRouteName }}</p>
+      <p class=" mb-0 text-capitalize" v-if="currentRouteName !== 'gameplay'">
+        {{ currentRouteName }}
+      </p>
       <v-spacer></v-spacer>
       <p class="mb-0 font-weight-medium amber--text text-accent-4">
         123,000.00
@@ -38,7 +40,7 @@
               <v-list-item-title>Play</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item link @click="goTo('/help')">
             <v-list-item-icon>
               <v-icon>mdi-help-circle</v-icon>
             </v-list-item-icon>
@@ -82,7 +84,7 @@
               <v-list-item-title>Settings</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item link @click="goTo('/login')">
             <v-list-item-icon>
               <v-icon>mdi-power</v-icon>
             </v-list-item-icon>

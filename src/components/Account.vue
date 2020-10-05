@@ -3,7 +3,7 @@
     <credit-balance></credit-balance>
 
     <v-row>
-      <v-col cols="6" class="">
+      <v-col cols="6" class="pr-1">
         <v-card
           class="pa-2 account-tab"
           @click="setTab(0)"
@@ -15,7 +15,7 @@
           </div>
         </v-card>
       </v-col>
-      <v-col cols="6" class="">
+      <v-col cols="6" class="pl-1">
         <v-card
           class="pa-2 account-tab"
           @click="setTab(1)"

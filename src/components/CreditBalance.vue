@@ -3,7 +3,7 @@
     <v-col>
       <v-card class="mx-auto white--text" color="#2C343A " flat>
         <v-card-text>
-          <p class="float-right caption grey--text text-lighten-1">
+          <p class="float-right caption grey--text text-lighten-1 mb-0">
             Account Credits
           </p>
           <p
@@ -16,12 +16,12 @@
 
         <v-card-actions class="pt-0">
           <v-row class="ma-0">
-            <v-col cols="6" class="pr-1">
+            <v-col cols="6" class="pr-1 pa-0">
               <v-btn depressed block small color="success">
                 Add Credits
               </v-btn>
             </v-col>
-            <v-col cols="6" class="pl-1">
+            <v-col cols="6" class="pl-1 pa-0">
               <v-btn depressed block small color="warning">
                 Withdraw
               </v-btn>
